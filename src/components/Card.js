@@ -9,10 +9,10 @@ function Card(props) {
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div id="card" onClick={handleGameLogic.bind(this, name)}>
-      <div>
+      <div className="picture">
         <img src={picture} alt={name} />
       </div>
-      <div>{name}</div>
+      <div className="caption">{name}</div>
     </div>
   );
 }

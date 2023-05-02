@@ -5,8 +5,11 @@ function Header(props) {
   const { score, highScore } = props;
   return (
     <div id="header">
-      <div>score: {score}</div>
-      <div>highscore: {highScore}</div>
+      <div className="title">Stardust Crusaders Memory Cards</div>
+      <div className="scoreboard">
+        <div>Score: {score}</div>
+        <div>Highscore: {highScore}</div>
+      </div>
     </div>
   );
 }

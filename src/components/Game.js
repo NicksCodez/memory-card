@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import CardContainer from './CardContainer';
+import '../styles/game.css';
 
 function Game() {
   const [score, setScore] = useState(0);
