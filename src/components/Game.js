@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import CardContainer from './CardContainer';
 import '../styles/game.css';
 
 function Game() {
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(
+    Number.parseInt(localStorage.getItem('highScore'), 10) || 0
+  );
   const [clickedCardArr, setClickedCardArr] = useState([]);
 
   const incrementScore = () => setScore((prevScore) => prevScore + 1);
@@ -25,6 +27,10 @@ function Game() {
     setClickedCardArr((prevArr) => prevArr.concat([cardName]));
     incrementScore();
   };
+
+  useEffect(() => {
+    localStorage.setItem('highScore', highScore);
+  }, [highScore]);
 
   return (
     <div id="game">
